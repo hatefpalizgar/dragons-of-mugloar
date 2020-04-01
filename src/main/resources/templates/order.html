@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+  <div th:insert = "fragments/header :: myHeader">
+  </div>
+  <title>Purchase Status</title>
+</head>
+
+<body>
+<div class = "container"
+	 style = "display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 20px;">
+  <table class = "table table-striped table-bordered table-hover" id = "tbl"
+		 style = "cursor: pointer">
+    <thead class = "table-dark" style = "border:1px solid black;">
+    <tr>
+      <th>Status</th>
+      <th>Lives</th>
+      <th>Gold</th>
+      <th>Level</th>
+      <th>Turn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td th:text = "${itemPurchased.shoppingSuccess}"></td>
+      <td th:text = "${itemPurchased.lives}"></td>
+      <td th:text = "${itemPurchased.gold}"></td>
+      <td th:text = "${itemPurchased.level}"></td>
+      <td th:text = "${itemPurchased.turn}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a class = "btn  text-capitalize mdc-button mdc-button--raised"
+	   style = "--mdc-theme-primary: rgba(57,57,57,0.83)"
+	   th:href = "@{/{gameId}/shop/get/(gameId=${gameId})}">BACK</a>
+  </div>
+</div>
+<div th:insert = "fragments/footer :: myFooter(lives=${game.lives},gold=${game.gold},level=${game.level},score=${game.score},highScore=${game.highScore},turn =${game.turn})">
+</div>
+</body>
+
+</html>

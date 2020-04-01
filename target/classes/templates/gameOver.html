@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+  <title>Game Over</title>
+  <div th:insert = "fragments/header :: myHeader"></div>
+</head>
+<body>
+<div style = "display: flex;flex-direction: column;justify-content:center ;align-items:center;text-align: center;">
+  <h1 style = "color: #b00020; font-variant-caps: all-small-caps">Game Over</h1>
+  <div>
+    <a class = "btn  text-capitalize mdc-button mdc-button--raised"
+	   style = "--mdc-theme-primary: rgba(50,164,238,0.83);margin-top: 10px"
+	   th:href = "@{/game/start}">New Game</a>
+  </div>
+</div>
+<div th:insert = "fragments/footer :: myFooter(lives=${game.lives},gold=${game.gold},level=${game.level},score=${game.score},highScore=${game.highScore},turn =${game.turn})"></div>
+</body>
+</html>

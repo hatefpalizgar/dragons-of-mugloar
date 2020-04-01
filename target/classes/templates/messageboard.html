@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+  <div th:insert = "fragments/header :: myHeader"></div>
+  <title>Message Board</title>
+</head>
+
+<body>
+<div class = "container"
+	 style = "display: flex;flex-direction: column;justify-content: center;align-items: center;">
+  <table class = "table table-striped table-bordered table-hover" id = "tbl"
+		 style = "cursor: pointer">
+    <caption class = "text-center text-info"> List of Ads for Game ID:
+      <div>
+        <p th:text = "${game.gameId}">
+      </div>
+    </caption>
+    <thead class = "table-dark" style = "border:1px solid black;">
+    <tr>
+      <th>Ad ID</th>
+      <th>Message</th>
+      <th>Reward</th>
+      <th>Expires in (turn)</th>
+      <th>Probability</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "message:${messages}">
+      <form action = "#" method = "get"
+			th:action = "@{/{gameId}/messages/solve/{adId}(gameId=${gameId},adId=${message.adId})}"
+			th:object = "${messages}">
+        <td th:text = "${message.adId}"></td>
+        <td th:text = "${message.message}"></td>
+        <td th:text = "${message.reward}"></td>
+        <td th:text = "${message.expiresIn}"></td>
+        <td th:text = "${message.probability}"></td>
+        <td width = "10%">
+          <button class = "btn btn-primary btn-lg mdc-button mdc-button--raised font-weight-bold"
+				  style = "font-size: 1em;--mdc-theme-primary: #32a4ee"
+				  type = "submit"> SOLVE
+          </button>
+        </td>
+      </form>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a class = "btn  text-capitalize mdc-button mdc-button--raised"
+	   style = "--mdc-theme-primary: rgba(57,57,57,0.83);margin-bottom: 10px"
+	   th:href = "@{/game/info}">BACK</a>
+  </div>
+</div>
+<div th:insert = "fragments/footer :: myFooter(lives=${game.lives},gold=${game.gold},level=${game.level},score=${game.score},highScore=${game.highScore},turn =${game.turn})">
+</div>
+</body>
+
+</html>

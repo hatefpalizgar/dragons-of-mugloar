@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.thymeleaf.org">
+
+<body>
+<div th:fragment = "myFooter (lives,gold,level,score,highScore,turn)">
+  <div class = "card-group" style = "margin-top: 10px">
+    <!-- Start: 6 Column Data Summary Panel -->
+    <div class = "card text-center">
+      <div class = "card-body">
+        <div class = "row">
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fa fa-heart fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" style = "font-size: 26px;"
+					th:text = "${lives}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">lives</span>
+            </p>
+          </div>
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fa fa-first-order fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" th:text = "${gold}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">gold</span>
+            </p>
+          </div>
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fas fa-messages fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" th:text = "${level}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">level</span>
+            </p>
+          </div>
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fas fa-star fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" th:text = "${score}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">score</span>
+            </p>
+          </div>
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fa fa-trophy fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" th:text = "${highScore}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">High score</span></p>
+          </div>
+          <div class = "col-6 col-sm-4 col-lg-2">
+            <p class = "text-center"><span class = "fa-stack"><i
+					class = "fa fa-circle text-primary fa-stack-2x"></i><i
+					class = "fa fa-rotate-left fa-stack-1x fa-inverse"></i><br>
+									<br>
+								</span><br>
+              <span class = "h2" th:text = "${turn}">
+								</span><br>
+              <span class = "text-uppercase text-muted h6">Turn</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class = "card-header">
+        <div class = "row">
+          <div class = "col">
+            <h2 class = "h2" style = "margin: -6px;"><span class = "fa-stack"><i
+					class = "fa fa-bar-chart-o fa-stack-1x fa-inverse"
+					style = "color: rgb(0,123,255);padding: -0;margin: 4px;height: 81px;width: 65px;font-size: 50px;"></i></span>&nbsp;Statistics
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!-- End: 6 Column Data Summary Panel -->
+  </div>
+</div>
+</body>
+
+</html>

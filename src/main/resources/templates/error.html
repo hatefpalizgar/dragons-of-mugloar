@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th = "http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset = "UTF-8">
+  <div th:insert = "fragments/header :: myHeader"></div>
+  <title>Error</title>
+</head>
+
+<body>
+<div style = "display: flex;flex-direction: column;justify-content:center ;align-items:center;text-align: center;min-height: 100vh;">
+  <h1 style = "font-variant-caps: all-small-caps">WHOOPS!!! <br>Something went wrong</h1><br>
+  <h3 style = "color: #b00020; font-variant-caps: all-small-caps">Resource is no longer available</h3>
+  <div>
+    <a class = "btn  text-capitalize mdc-button mdc-button--raised"
+	   style = "--mdc-theme-primary: rgba(57,57,57,0.83);margin-top: 10px"
+	   th:href = "@{/game/info}">HOME</a>
+  </div>
+</div>
+</body>
+
+</html>
